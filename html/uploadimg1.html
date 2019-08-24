@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <div class="box" id="img1"></div>
+</body>
+<script src="/static/js/jquery-3.3.1.js"></script>
+<script src="/static/js/mavatar.js"></script>
+<script>
+    var avatar = new Mavatar({el: '#img1',width:"280px",height:"180px"});
+    function isClip() {
+        if($("#Mavatar-img").attr("src")){
+            return true;
+        }else {
+            return false;
+        }
+    }
+    function clip() {
+        avatar.imageClipper(function (data) {
+            //  将图片上传至后台
+            avatar.upload({
+                url: '/upload.php',
+                name: 'avatar',
+                success: function (data) {
+                    data = JSON.parse(data);
+                    if(data.code==0){
+                        alert("正面上传成功");
+                    }else {
+                        alert("正面上传失败");
+                    }
+                },
+                error: function (error) {
+                    alert("证明上传失败");
+                }
+            });
+        })
+    }
+</script>
+</html>

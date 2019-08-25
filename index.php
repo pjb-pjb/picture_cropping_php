@@ -37,7 +37,7 @@
         width: 200px;
         background: #3b8cff;
         border-radius: 50px;
-        margin: 20px auto 0;
+        margin: 40px auto 0;
         font-size: 20px;
         text-align: center;
         line-height: 50px;

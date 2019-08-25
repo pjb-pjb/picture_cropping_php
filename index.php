@@ -73,6 +73,8 @@
         $(".button2").click(function () {
             eleImg1.avatar.resetImage();
             eleImg2.avatar.resetImage();
+            $(".img1").contents().find(".box").addClass("box-img");
+            $(".img2").contents().find(".box").addClass("box-img");
             $(".button2").toggle();
         });
     </script>

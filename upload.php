@@ -6,9 +6,9 @@
  * Time: 1:49
  */
 //require "/imgCompress.php";
-function response($resulr)
+function response($result)
 {
-    echo json_encode();
+    echo json_encode($result);
     exit();
 }
 

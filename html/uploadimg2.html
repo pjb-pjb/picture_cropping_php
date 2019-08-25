@@ -8,13 +8,20 @@
     <title>Document</title>
     <link rel="stylesheet" href="/static/css/style.css">
 </head>
+<style>
+    .box-img{
+        background: url("/static/img/f.png") no-repeat center / 100% 100%;
+    }
+</style>
 <body>
-    <div class="box" id="img1"></div>
+    <div class="box box-img" id="img1"></div>
 </body>
 <script src="/static/js/jquery-3.3.1.js"></script>
 <script src="/static/js/mavatar.js"></script>
 <script>
-    var avatar = new Mavatar({el: '#img1',width:"280px",height:"180px"});
+    var avatar = new Mavatar({el: '#img1',width:"280px",height:"180px",fileOnchange:function () {
+            $(".box").removeClass("box-img");
+        }});
     function isClip() {
         if($("#Mavatar-img").attr("src")){
             return true;

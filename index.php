@@ -66,6 +66,7 @@
                 eleImg2.clip();
                 eleImg1.clip();
                 $(".button2").toggle();
+                $(".button1").toggle();
             }else {
                 alert("请选择图片上传");
             }
@@ -76,6 +77,7 @@
             $(".img1").contents().find(".box").addClass("box-img");
             $(".img2").contents().find(".box").addClass("box-img");
             $(".button2").toggle();
+            $(".button1").toggle();
         });
     </script>
 </body>
